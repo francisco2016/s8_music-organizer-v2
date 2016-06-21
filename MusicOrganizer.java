@@ -32,6 +32,16 @@ public class MusicOrganizer
         files.add(filename);
     }
     
+        /**
+     * mt para mostrar todos los archivos utilizando un bucle "for each"...............................0042
+     */
+    public void listAllFiles(){
+        for(String file: files ){
+            System.out.println(file);
+        }
+    }
+
+    
     /**
      * Return the number of files in the collection.
      * @return The number of files in the collection.
