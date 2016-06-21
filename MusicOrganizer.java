@@ -47,14 +47,16 @@ public class MusicOrganizer
      * imprime por pantalla aquellos archivo que contienen una cadena dada. ..............................0044
      */
     public void listMatching(String searchString){
-        for(String filename: files){
-            if(filename.contains(searchString)){
-                System.out.println(filename);
-            }
-            else{
-                System.out.println("No tenemos archivos con la cadena dada. ");
-            }
-        }
+        boolean contieneCadena = false;
+       for(String filename: files){
+           if(filename.contains(searchString)){
+               System.out.println(filename);
+               contieneCadena = true;
+           }
+       }
+       if( !contieneCadena){
+           System.out.println("Error, el texto escrito no se encuentra en ningún archivo.");
+       }
     }
     
     /**
