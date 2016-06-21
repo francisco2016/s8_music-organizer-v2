@@ -42,7 +42,20 @@ public class MusicOrganizer
             cont ++;
         }
     }
-
+    
+    /**
+     * imprime por pantalla aquellos archivo que contienen una cadena dada. ..............................0044
+     */
+    public void listMatching(String searchString){
+        for(String filename: files){
+            if(filename.contains(searchString)){
+                System.out.println(filename);
+            }
+            else{
+                System.out.println("No tenemos archivos con la cadena dada. ");
+            }
+        }
+    }
     
     /**
      * Return the number of files in the collection.
