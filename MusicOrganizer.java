@@ -79,7 +79,8 @@ public class MusicOrganizer
     public int findFirst(String cadena){ //------------------------------ 0048
         int index = 0;
         boolean found = false;
-        while (!found && index < files.size()){
+        int sizeColection = files.size();
+        while (!found && index < sizeColection){
             if(files.get(index).contains(cadena)){
                 found = true;
             }
