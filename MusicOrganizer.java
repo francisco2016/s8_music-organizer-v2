@@ -60,6 +60,18 @@ public class MusicOrganizer
     }
     
     /**
+     * reproduzca los primeros segundos de todas las canciones de un determinado artista pasado como parámetro. 
+     */
+    public void startAllSongArtist(String nameArtist){   //---------------------- 0044
+        for(String nameFile: files){
+            if(nameFile.contains(nameArtist)){
+                player.playSample(nameFile);
+            }
+        }
+    }
+
+    
+    /**
      * Return the number of files in the collection.
      * @return The number of files in the collection.
      */
