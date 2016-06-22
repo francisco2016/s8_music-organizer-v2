@@ -13,7 +13,7 @@ public class MusicOrganizer
     private ArrayList<String> files;
     // A player for the music files.
     private MusicPlayer player;
-        
+
     /**
      * Create a MusicOrganizer
      */
@@ -22,7 +22,7 @@ public class MusicOrganizer
         files = new ArrayList<String>();
         player = new MusicPlayer();
     }
-    
+
     /**
      * Add a file to the collection.
      * @param filename The file to be added.
@@ -31,8 +31,8 @@ public class MusicOrganizer
     {
         files.add(filename);
     }
-    
-        /**
+
+    /**
      * mt para mostrar todos los archivos utilizando un bucle "for each"...............................0042
      */
     public void listAllFiles(){
@@ -42,23 +42,23 @@ public class MusicOrganizer
             cont ++;
         }
     }
-    
+
     /**
      * imprime por pantalla aquellos archivo que contienen una cadena dada. ..............................0044
      */
     public void listMatching(String searchString){
         boolean contieneCadena = false;
-       for(String filename: files){
-           if(filename.contains(searchString)){
-               System.out.println(filename);
-               contieneCadena = true;
-           }
-       }
-       if( !contieneCadena){
-           System.out.println("Error, el texto escrito no se encuentra en ningún archivo.");
-       }
+        for(String filename: files){
+            if(filename.contains(searchString)){
+                System.out.println(filename);
+                contieneCadena = true;
+            }
+        }
+        if( !contieneCadena){
+            System.out.println("Error, el texto escrito no se encuentra en ningún archivo.");
+        }
     }
-    
+
     /**
      * reproduzca los primeros segundos de todas las canciones de un determinado artista pasado como parámetro. 
      */
@@ -70,7 +70,29 @@ public class MusicOrganizer
         }
     }
 
-    
+    /**
+     * A partir del código terminado de la actividad 0044, añade el método findFirst. Este método debe 
+     * recibir una cadena como parámetro y devolver el índice del primer archivo que contiene dicha cadena o
+     * el valor -1 en caso de que no se encuentre ningún archivo que cumpla la condición. Debe usar un bucle while y
+     * la condición debe ser exactamente:   while (!found && index < files.size())
+     */
+    public int findFirst(String cadena){ //------------------------------ 0048
+        int index = 0;
+        boolean found = false;
+        while (!found && index < files.size()){
+            if(files.get(index).contains(cadena)){
+                found = true;
+            }
+            else{
+                index += 1;
+            }
+        }
+        if(!found){
+            index = -1;
+        }
+        return index;
+    }
+
     /**
      * Return the number of files in the collection.
      * @return The number of files in the collection.
@@ -79,7 +101,7 @@ public class MusicOrganizer
     {
         return files.size();
     }
-    
+
     /**
      * List a file from the collection.
      * @param index The index of the file to be listed.
@@ -91,7 +113,7 @@ public class MusicOrganizer
             System.out.println(filename);
         }
     }
-    
+
     /**
      * Remove a file from the collection.
      * @param index The index of the file to be removed.
